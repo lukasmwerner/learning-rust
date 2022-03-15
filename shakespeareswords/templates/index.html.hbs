@@ -1,0 +1,37 @@
+<html>
+	<head>
+		<style>
+			body {
+				font-family: sans-serif;
+				padding: 10%;
+			}
+			input {
+				font-size: 1.3rem;
+			}
+			input[type=text] {
+				border: none;
+    			border-bottom: black 1px solid;
+			}
+			input[type=submit] {
+				background-color: none;
+				background: none;
+				border: none;
+			}
+		</style>
+	</head>
+    <body>
+		<h1>Shakespeare Words</h1>
+				<form method="GET">
+			<input type="text" name="query" placeholder="Search word">
+			<input type="submit" value="🔎">
+		</form>
+		<hr />
+        {{#if query}}
+            <h3>Results for {{query}}</h3>
+        {{/if}}
+        {{ #each results}}
+        <p>{{this.Headword}}: {{this.Definition}}</p>
+        {{/each}}
+    </body>
+</html>
+
